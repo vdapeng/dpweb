@@ -1,0 +1,31 @@
+{{template "header"}}
+		<title></title>
+	</head>
+	<body>
+		<nav class="navbar navbar-default navbar-fixed-top">
+		  <div class="container">
+			{{template "navbar" .}}
+			</div>
+		</nav>
+		<table class="table table-condensed">
+      <thead>
+        <tr>
+          <th>#</th>
+          <th>用户名</th>
+          <th>密码</th>
+          <th>创建时间</th>
+        </tr>
+      </thead>
+      <tbody>
+		{{range .Users}}
+        <tr>
+          <th scope="row">{{.Id}}</th>
+          <td>{{.Username}}</td>
+          <td>{{.Password}}</td>
+          <td>{{.Created}}</td>
+        </tr>
+		{{end}}
+      </tbody>
+    </table>
+	</body>
+</html>
